@@ -5,6 +5,10 @@ let Buttonz = styled.button`
   width: 125px;
   height: 125px;
   border-radius: 50%;
+  background-color: steelblue;
+  color: white;
+  font-size: 48px;
+  box-shadow: 0px 2px 0px 2px maroon;
 `
 
 

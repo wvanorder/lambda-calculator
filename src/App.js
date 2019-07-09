@@ -13,8 +13,9 @@ import { switchCase } from "@babel/types";
 
 let Containerz = styled.div`
   width: 600px;
-  background-color: tomato;
+  background-color: firebrick;
   height: 900px;
+  border-radius: 15px;
 `
 
 let Top = styled.div`

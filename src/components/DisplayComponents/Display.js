@@ -7,7 +7,9 @@ const Displayz = styled.div`
   width: 90%;
   margin: 0 auto;
   border-radius: 120px;
-  background-color: darkgray;
+  background-color: darkslategray;
+  color: white;
+  font-size: 75px;
   margin-bottom: 15px;
   display: flex;
   flex-flow: row nowrap;
