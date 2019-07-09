@@ -12,6 +12,7 @@ import Display from './components/DisplayComponents/Display';
 import { switchCase } from "@babel/types";
 
 let Containerz = styled.div`
+padding: 15px;
   width: 600px;
   background-color: firebrick;
   height: 900px;
@@ -24,6 +25,7 @@ let Top = styled.div`
 `
 
 let Appz = styled.div`
+
   height: 700px;
   width: 95%;
   display: flex;
