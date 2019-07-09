@@ -16,10 +16,9 @@ const Displayz = styled.div`
 `
 
 const Display = (props) => {
-  console.log("Diaply Props: ", props)
   return(
     <Displayz>{/* Display any props data here */}
-      <h2>{props.firstNum && !props.secondNum ? props.firstNum : (props.firstNum && props.secondNum ? props.secondNum : (props.firstNum && props.secondNum && props.sum ? props.sum : 0))}</h2>
+      <h2>{props.sum ? props.sum : (props.sign ? props.secondNum : (!props.secondNum ? props.firstNum : props.secondNum))}</h2>
     </Displayz>
   ) 
 };

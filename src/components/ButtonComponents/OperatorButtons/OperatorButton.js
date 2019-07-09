@@ -11,7 +11,7 @@ const OperatorButton = (props) => {
   return (
     <>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
-      <Buttonz>{props.operator.char}</Buttonz>
+      <Buttonz value={props.operator.value} onClick={props.operator.value !== '=' ? props.giveSign: props.findSum} >{props.operator.char}</Buttonz>
     </>
   );
 };

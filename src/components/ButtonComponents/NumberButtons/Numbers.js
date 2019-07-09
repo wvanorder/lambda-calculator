@@ -28,7 +28,7 @@ const Numbers = (props) => {
        component matching the name on the provided file. Pass
        it any props needed by the child component*/}
        {numbersArray.map(number => {
-         return <NumberButton number={number} sign={props.sign} firstNumHandler={props.firstNumHandler} />
+         return <NumberButton number={number} sign={props.sign} firstNumHandler={props.firstNumHandler} secondNumHandler={props.secondNumHandler}/>
        })}
     </Numberz>
   );

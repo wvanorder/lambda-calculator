@@ -6,6 +6,7 @@ import OperatorButton from './OperatorButton';
 
 //Import your array data to from the provided data file
 import { operators } from '../../../data';
+import { tsPropertySignature } from "@babel/types";
 
 
 let Column = styled.div`
@@ -15,7 +16,7 @@ let Column = styled.div`
   height: 98%;
 `
 
-const Operators = () => {
+const Operators = (props) => {
   // STEP 2 - add the imported data to state
   const [operatorsArray, changeOperators] = useState(operators);
 
@@ -25,7 +26,7 @@ const Operators = () => {
        component matching the name on the provided file. Pass
        it any props needed by the child component*/}
        {operatorsArray.map(operator => {
-         return <OperatorButton operator={operator} />
+         return <OperatorButton operator={operator} giveSign={props.giveSign} findSum={props.findSum} />
        })}
     </Column>
   );

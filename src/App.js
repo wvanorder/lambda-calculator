@@ -9,6 +9,7 @@ import Numbers from './components/ButtonComponents/NumberButtons/Numbers';
 import Operators from './components/ButtonComponents/OperatorButtons/Operators';
 import Specials from './components/ButtonComponents/SpecialButtons/Specials';
 import Display from './components/DisplayComponents/Display';
+import { switchCase } from "@babel/types";
 
 let Containerz = styled.div`
   width: 600px;
@@ -61,10 +62,32 @@ function App() {
     return changeFirstNum(firstNum + e.target.value);
   }
 
+  const giveSign = e => {
+    return changeSign(e.target.value);
+  }
+
+  const makeSecondNum = e => {
+    return changeSecondNum(secondNum + e.target.value);
+  }
+
   const clear = () => {
     changeFirstNum(0);
     changeSum(0);
     changeSecondNum(0);
+    changeSign('');
+  }
+
+  const findSum = () => {
+    if(sign === '+'){
+      changeSum((parseInt(firstNum) +  parseInt(secondNum)));
+    } else if(sign === '-'){
+      changeSum((parseInt(firstNum) -  parseInt(secondNum)));
+    } else if(sign ==='/') {
+      changeSum((parseInt(firstNum) /  parseInt(secondNum)));
+    } else if(sign ==='*'){
+      changeSum((parseInt(firstNum) *  parseInt(secondNum)));
+    }
+    return  changeFirstNum(sum)
   }
 
 
@@ -72,15 +95,15 @@ function App() {
     <Containerz>
 
         <Logo />
-        <Display firstNum={firstNum} />
+        <Display firstNum={firstNum} secondNum={secondNum} sign={sign} sum={sum} />
 
       <Appz>
         <Triple>
           <Specials clear={clear} />
-          <Numbers firstNumHandler={makeFirstNum} sign={sign}/>
+          <Numbers firstNumHandler={makeFirstNum} secondNumHandler={makeSecondNum} sign={sign}/>
         </Triple>
         <Right>
-          <Operators />
+          <Operators giveSign={giveSign} findSum={findSum} />
         </Right>
         
         
